@@ -1,0 +1,107 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.hero {
+  padding: 50px 20px;
+  max-width: 600px;
+  margin: auto;
+}
+
+.logo {
+  width: 100px;
+  margin-bottom: 20px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.glitch {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #fff;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.glitch::before {
+  left: 2px;
+  color: #0ff;
+  animation: glitch 1s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+  left: -2px;
+  color: #f0f;
+  animation: glitch 1s infinite linear alternate;
+}
+
+@keyframes glitch {
+  0% { clip: rect(0, 9999px, 0, 0); }
+  10% { clip: rect(10px, 9999px, 50px, 0); }
+  20% { clip: rect(5px, 9999px, 40px, 0); }
+  30% { clip: rect(30px, 9999px, 60px, 0); }
+  40% { clip: rect(0px, 9999px, 30px, 0); }
+  100% { clip: rect(0, 9999px, 0, 0); }
+}
+
+.tagline {
+  font-size: 1.2rem;
+  margin: 20px 0;
+  color: #ccc;
+}
+
+.buttons {
+  margin-top: 30px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  margin: 10px;
+  background: #fff;
+  color: #000;
+  font-weight: bold;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #ddd;
+  transform: scale(1.05);
+}
+
+.countdown-box {
+  margin-top: 40px;
+}
+
+.count-label {
+  font-size: 1rem;
+  color: #ff0;
+}
+
+#countdown {
+  font-size: 2rem;
+  color: #0f0;
+  margin-top: 10px;
+}
